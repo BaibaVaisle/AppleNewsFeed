@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readFullArticleButton.layer.cornerRadius = 12
+        readFullArticleButton.layer.cornerRadius = 6
         readFullArticleButton.tintColor = .label
                 self.title = "Article"
         
@@ -67,13 +67,13 @@ class DetailViewController: UIViewController {
                 self.savedItems.append(newItem)
                 saveData()
             }
-    }
     
-/*func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination: WebViewController = segue.destination as! WebViewController
         destination.urlString = webURLString
-    }*/
+    }
 
 
 
 
+}

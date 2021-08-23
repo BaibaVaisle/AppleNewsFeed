@@ -102,10 +102,6 @@ class SavedNewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 100
         }
-   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //storyBoardId
-    }*/
-        
         
     #warning("open WbKit")
             override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -118,10 +114,9 @@ class SavedNewsTableViewController: UITableViewController {
                 vc.urlString = savedItems[indexPath.row].url ?? "https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=1200&name=shutterstock_774749455.jpg"
                 navigationController?.pushViewController(vc, animated: true)
             }
-    }
    
     
-#warning("EditingStyle == .delete")
+#warning("editingStyle == .delete")
     // Override to support editing the table view.
 override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -153,3 +148,4 @@ override func tableView(_ tableView: UITableView, commit editingStyle: UITableVi
 
 
 
+}
