@@ -130,21 +130,20 @@ class NewsFeedViewController: UIViewController {
             return 100
         }
         
-        
-        //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+                let storybord = UIStoryboard(name: "Main", bundle: Bundle.main)
+                guard let vc = storybord.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else {
+                    return
+                }
             
-           // let storybord = UIStoryboard(name: "Main", bundle: Bundle.main)
-           // guard let vc = storybord.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else {
-                //return
-           // }
+            let item = items[indexPath.row]
+                    vc.contentString = item.description
+                    vc.titleString = item.title
+                    vc.webURLString = item.url
+                    vc.newsImage = item.image
             
-           // let item = items[indexPath.row]
-           // vc.contentString = item.description
-           // vc.titleString = item.title
-           // vc.webURLString = item.url
-           // vc.newsImage = item.image
-            
-    //        present(vc, animated: true, completion: nil)
-           // navigationController?.pushViewController(vc, animated: true)
-       // }
+            //        present(vc, animated: true, completion: nil)
+                    navigationController?.pushViewController(vc, animated: true)
 }
+    }
