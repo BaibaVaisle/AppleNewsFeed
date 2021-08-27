@@ -31,6 +31,8 @@ class DetailViewController: UIViewController {
         readFullArticleButton.layer.cornerRadius = 6
         readFullArticleButton.tintColor = .label
                 self.title = "Article"
+        savedButton.layer.cornerRadius = 6
+        savedButton.tintColor = .label
         
         titleLabel.text = titleString
                 contentTextView.text = contentString

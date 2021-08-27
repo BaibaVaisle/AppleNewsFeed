@@ -37,7 +37,7 @@ class SavedNewsTableViewController: UITableViewController {
     func saveData(){
             do{
                 try context?.save()
-                basicAlert(title: "Deleted!", message: "Oops you just erased from CoreData your article.")
+                basicAlert(title: "Deleted!", message: "You have successfully erased from CoreData your article.")
             }catch{
                 print(error.localizedDescription)
             }
@@ -52,6 +52,7 @@ class SavedNewsTableViewController: UITableViewController {
             }catch{
                 fatalError("Error in retrieving Saved Items")
             }
+        tableView.reloadData()
 }
     #warning("how many items saved")
         func countItems() {
@@ -66,7 +67,7 @@ class SavedNewsTableViewController: UITableViewController {
         basicAlert(title: "Saved News Info!", message: "In this section you will find your saved articles. If you decide to delete some articles, you can do it by using \"Edit\" button and click on delete symbol, or alternative way is to pointer on related article and swipe from right side the left, then press \"delete\"!")
             }
         
-
+//change the title of editButtonTitle
     @IBAction func editButtonTapped(_ sender: Any) {
         tableView.isEditing = !tableView.isEditing
         if tableView.isEditing {
